@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Сегодня — прототип остатков</title>
+<style>
+:root{--ink:#1c2430;--muted:#667085;--paper:#efeae2;--phone:#f7f5f1;--blue:#1b6fe0;--orange:#c9651a;--green:#1b7a4e;--danger:#b42318;--studio:#17202b;--line:#e4dfd4}
+*{box-sizing:border-box}body{margin:0;font-family:Manrope,system-ui,sans-serif;background:var(--paper);color:var(--ink)}
+button{font:inherit;cursor:pointer}.app{display:flex;min-height:100dvh}
+.studio{width:280px;background:var(--studio);color:#efeae2;padding:20px 14px;overflow:auto}
+.studio button{width:100%;border:0;border-radius:12px;height:36px;margin:4px 0;text-align:left;padding:0 12px;background:transparent;color:inherit;font-weight:600}
+.studio button.on{background:#efeae2;color:var(--ink)}.studio .live{background:var(--blue);color:#fff;text-align:center}
+.wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px}
+.bar{display:none}.phone{width:390px;height:min(820px,calc(100dvh - 32px));background:var(--phone);border:1px solid var(--line);border-radius:32px;overflow:hidden;display:flex;flex-direction:column;position:relative;box-shadow:0 24px 60px rgb(28 36 48/.16)}
+.tg{height:48px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 16px;font-weight:800}
+.scroll{flex:1;overflow:auto}.nav{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);background:#fff}
+.nav button{border:0;background:0;padding:10px 0 8px;font-size:11px;font-weight:700;color:var(--muted)}.nav button.on{color:var(--blue)}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;text-align:left;width:100%;margin:0 0 12px}
+.photo{height:140px;background:linear-gradient(135deg,#f3d7b0,#c9651a)}.photo.puff{background:linear-gradient(135deg,#f6e2b8,#d9a441)}.photo.flow{background:linear-gradient(135deg,#f3c9c0,#c45c6a)}
+.pad{padding:12px 14px}.muted{color:var(--muted);font-size:13px}.price{font-size:22px;font-weight:800}.old{color:var(--muted);text-decoration:line-through;font-size:14px;margin-left:6px}
+.pill{background:#fff1e4;color:var(--orange);border-radius:99px;padding:2px 8px;font-size:12px;font-weight:800}
+.btn{height:48px;width:calc(100% - 32px);margin:12px 16px;border:0;border-radius:16px;background:var(--blue);color:#fff;font-weight:800}.btn:disabled{background:#f3f1ec;color:var(--muted)}
+.sheet{position:absolute;inset:0;background:rgb(28 36 48/.4);display:flex;flex-direction:column;justify-content:flex-end}.sheet .box{background:#fff;border-radius:24px 24px 0 0;padding:16px}
+.toast{position:absolute;top:56px;left:16px;right:16px;background:var(--ink);color:#efeae2;padding:10px;border-radius:14px;text-align:center;font-size:13px;font-weight:700}
+.banner{margin:12px 16px;padding:12px;border-radius:16px;font-weight:800;font-size:14px}.ok{background:#e6f5ee;color:var(--green)}.wait{background:#e7f0fc}.bad{background:#fdecec;color:var(--danger)}.mute{background:#f3f1ec;color:var(--muted)}
+.num{font-size:48px;font-weight:800;text-align:center}.orange{background:var(--orange);color:#fff;border:0;border-radius:16px;padding:12px;width:100%;text-align:left}
+@media(max-width:800px){.studio{display:none}.bar{display:flex;height:48px;width:100%;background:var(--studio);color:#fff;align-items:center;justify-content:space-between;padding:0 12px}.phone{width:100%;height:calc(100dvh - 48px);border:0;border-radius:0;box-shadow:none}.wrap{padding:0}.app{flex-direction:column}}
+</style></head><body>
+<div class="app"><aside class="studio" id="studio"></aside>
+<div class="wrap"><div class="bar"><b>Прототип · Сегодня</b><button id="openFrames" style="border:0;background:#1b6fe0;color:#fff;border-radius:99px;padding:6px 12px;font-weight:800">Кадры</button></div>
+<div class="phone" id="phone"></div></div></div>
+<div id="drawer" style="display:none;position:fixed;inset:0;background:#17202b;color:#efeae2;overflow:auto;z-index:9"></div>
+<script src="app.js"></script></body></html>
